@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# client & prospect files
+/Clients/
+/app/demos/
+/logo-turbosites.html
