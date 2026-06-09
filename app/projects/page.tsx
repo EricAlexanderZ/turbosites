@@ -20,13 +20,13 @@ const PROJECTS = [
     tags: ["Corporate", "Multi-Page", "Services"],
   },
   {
-    name: "El Hilo Co",
+    name: "AA Designs",
     category: "E-Commerce",
     description:
-      "Brand and shopping experience for El Hilo Co, a modern apparel company. Designed to reflect the brand's identity while making it easy for customers to browse and buy.",
-    url: "https://www.elhiloco.com/",
-    image: "/projects/el-hilo-co.png",
-    tags: ["E-Commerce", "Fashion", "Brand"],
+      "Full e-commerce store for AA Designs, a custom print and sticker company serving 31,000+ customers nationwide. Built to handle a large product catalog across stickers, labels, magnets, yard signs, and banners, with online proofing and fast checkout.",
+    url: "https://aadesigns.co/",
+    image: "/projects/aa-designs.png",
+    tags: ["E-Commerce", "Print", "Stickers"],
   },
 ];
 
