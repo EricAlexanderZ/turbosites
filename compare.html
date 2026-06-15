@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turbosites.io vs Shopify — Real Cost Comparison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Geist', system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container    { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container-sm { max-width: 860px;  margin: 0 auto; padding: 0 24px; }
+
+    /* ── Nav ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid #f3f4f6;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+    }
+    .nav-cta {
+      display: inline-block;
+      background: #0151fc;
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: #0040cc; }
+
+    /* ── Hero ── */
+    .hero {
+      background: #fff;
+      padding: 80px 24px 72px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff4ff;
+      border: 1px solid #c7d7fd;
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0151fc;
+      margin-bottom: 24px;
+    }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #0151fc; flex-shrink: 0; }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      color: #000d2b;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: #0151fc; }
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: #6b7280;
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #0151fc;
+      color: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .btn-primary:hover { background: #0040cc; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #374151;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 14px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color .15s, background .15s;
+    }
+    .btn-secondary:hover { border-color: #d1d5db; background: #f9fafb; }
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 48px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .trust-badges span { display: flex; align-items: center; gap: 8px; }
+    .check-icon { width: 16px; height: 16px; color: #0151fc; flex-shrink: 0; }
+
+    /* ── Sections ── */
+    .section-white { background: #fff;    padding: 80px 0; }
+    .section-gray  { background: #f9fafb; padding: 80px 0; }
+    .section-dark  { background: #000d2b; padding: 80px 0; }
+
+    .section-heading { text-align: center; margin-bottom: 48px; }
+    .section-heading h2 {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 900;
+      letter-spacing: -.025em;
+      color: #000d2b;
+      margin-bottom: 12px;
+    }
+    .section-heading p { font-size: 16px; color: #6b7280; max-width: 520px; margin: 0 auto; }
+    .section-heading.dark h2 { color: #fff; }
+    .section-heading.dark p  { color: #a5bffe; }
+
+    /* ── Cost cards ── */
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 680px) { .cost-grid { grid-template-columns: 1fr; } }
+
+    .cost-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 28px;
+      position: relative;
+    }
+    .cost-card.featured {
+      border-color: #0151fc;
+      box-shadow: 0 0 0 1px rgba(1,81,252,0.15), 0 20px 48px rgba(1,81,252,0.08);
+    }
+    .featured-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0151fc;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .cost-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+    .cost-card-price {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: 1;
+      color: #000d2b;
+    }
+    .cost-card-price sub { font-size: 18px; font-weight: 500; color: #6b7280; vertical-align: baseline; }
+    .cost-card-sub { font-size: 13px; color: #9ca3af; margin: 6px 0 24px; }
+
+    .line-items { list-style: none; display: flex; flex-direction: column; }
+    .line-items li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #6b7280;
+      padding: 10px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .line-items li:last-child { border-bottom: none; }
+    .line-items li strong { color: #111827; font-weight: 600; }
+    .line-items li .included { color: #0151fc; font-weight: 600; font-size: 12px; }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+      font-weight: 700;
+      font-size: 15px;
+      color: #111827;
+    }
+    .total-num-bad  { font-size: 22px; color: #dc2626; }
+    .total-num-good { font-size: 22px; color: #0151fc; }
+    .annual-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .ann-bad  { color: #dc2626; font-weight: 600; }
+    .ann-good { color: #059669; font-weight: 600; }
+
+    /* ── Dark chart section ── */
+    .chart-card {
+      border: 1px solid #132050;
+      background: #060d24;
+      border-radius: 20px;
+      padding: 36px 32px;
+    }
+    .chart-card h3 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .chart-sub { font-size: 14px; color: #a5bffe; margin-bottom: 36px; }
+
+    .chart-year { margin-bottom: 28px; }
+    .chart-year-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 10px;
+    }
+    .chart-bars { display: flex; flex-direction: column; gap: 8px; }
+    .bar-row { display: flex; align-items: center; gap: 12px; }
+    .bar-name {
+      width: 74px;
+      text-align: right;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      flex-shrink: 0;
+    }
+    .bar {
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      min-width: 64px;
+      white-space: nowrap;
+    }
+    .bar-shopify { background: linear-gradient(90deg, #dc2626, #991b1b); }
+    .bar-turbo   { background: linear-gradient(90deg, #0151fc, #0040cc); }
+
+    .savings-box {
+      margin-top: 32px;
+      background: rgba(1,81,252,0.1);
+      border: 1px solid rgba(1,81,252,0.25);
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .savings-box .big-num { font-size: 44px; font-weight: 900; color: #34d399; letter-spacing: -.03em; white-space: nowrap; }
+    .savings-box p { font-size: 14px; color: #a5bffe; }
+    .savings-box p strong { color: #fff; }
+
+    /* ── Cons grid ── */
+    .cons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 16px;
+    }
+    .con-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      transition: box-shadow .15s;
+    }
+    .con-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .con-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .con-card h4 { font-size: 14px; font-weight: 700; color: #000d2b; margin-bottom: 4px; }
+    .con-card p  { font-size: 13px; color: #6b7280; line-height: 1.55; }
+
+    /* ── Comparison table ── */
+    .compare-table-wrap {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { background: #f9fafb; }
+    th {
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    th.th-feature { width: 45%; }
+    th.th-turbo   { color: #0151fc; }
+    td {
+      padding: 14px 20px;
+      font-size: 14px;
+      border-bottom: 1px solid #f3f4f6;
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f9fafb; }
+    td.feature-col { color: #374151; font-weight: 500; }
+    td.bad-col     { color: #dc2626; font-weight: 600; }
+    td.good-col    { color: #0151fc; font-weight: 600; }
+
+    /* ── CTA ── */
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #050d28;
+      border: 1px solid #0d1f50;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0151fc;
+      margin-bottom: 24px;
+    }
+    .cta-section h2 {
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 900;
+      letter-spacing: -.03em;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .cta-section h2 span { color: #0151fc; }
+    .cta-section p { font-size: 17px; color: #a5bffe; max-width: 460px; margin: 0 auto 36px; }
+
+    .cta-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+      max-width: 320px;
+      margin: 0 auto 40px;
+    }
+    .cta-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #d1d5db;
+    }
+    .cta-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(1,81,252,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    footer {
+      background: #f9fafb;
+      border-top: 1px solid #e5e7eb;
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 640px) {
+      .section-white, .section-gray, .section-dark { padding: 56px 0; }
+      .hero { padding: 60px 24px 52px; }
+      .cost-card-price { font-size: 38px; }
+      th, td { padding: 12px 14px; }
+      .chart-card { padding: 24px 20px; }
+      .bar-name { width: 58px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header>
+  <div class="nav-inner">
+    <a href="https://turbosites.io" aria-label="TurboSites.io home">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1448 260" style="height:34px;width:auto;display:block;">
+        <defs>
+          <style>.c1{fill:url(#lg1)}.c2{fill:#0151fc}.c3{fill:url(#lg3)}.c4{fill:url(#lg2)}.c5{fill:url(#lg0)}.c6{fill:#000d2b}</style>
+          <linearGradient id="lg0" x1="165.41" y1="96.75" x2="489.98" y2="96.75" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff"/><stop offset="0" stop-color="#f9f9fa"/><stop offset=".05" stop-color="#cacdd3"/><stop offset=".1" stop-color="#9fa4af"/><stop offset=".15" stop-color="#797f8f"/><stop offset=".2" stop-color="#586074"/><stop offset=".26" stop-color="#3c465d"/><stop offset=".33" stop-color="#26314a"/><stop offset=".41" stop-color="#14203c"/><stop offset=".51" stop-color="#081532"/><stop offset=".65" stop-color="#010e2c"/><stop offset="1" stop-color="#000d2b"/>
+          </linearGradient>
+          <linearGradient id="lg1" x1="67.5" y1="205.97" x2="208.66" y2="205.97" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff"/><stop offset=".88" stop-color="#0151fc"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="78.5" y1="176.55" x2="219.66" y2="176.55" xlink:href="#lg1"/>
+          <linearGradient id="lg3" x1="90.83" y1="147.13" x2="232" y2="147.13" xlink:href="#lg1"/>
+        </defs>
+        <g>
+          <g>
+            <path class="c5" d="M316.45,94.03l-33.88,73.99-46.6-.31,46.96-104.9-117.52-.22,46.77-37.08,277.8.04-36.56,37.09-114.16.03c-5.59-.47-10.05,2.57-12.22,7.45l-10.6,23.93Z"/>
+            <path class="c2" d="M389.66,213.76h-173.56s13.96-32.31,13.96-32.31h155.01c4.45,0,8.96-1.43,10.46-5.85l4-11.77c.36-1.06.09-4.27-.91-4.77l-4.41-2.18h-55.02c-7.6-.46-15.31-2.76-19.84-9-4.87-6.71-4.99-15.83-2.21-23.54l7.14-19.76c6.16-17.04,19.44-28.53,38.09-29.87l118.63.13-32.67,30.87-82.16.04c-4.03,0-8.47,1.4-9.83,5.46l-3.74,11.16c-.86,2.56,2.04,5.36,4.62,5.37l58.84.26c6.66.03,13.96,3.4,17.76,8.41,5.23,6.9,5.82,16.2,2.95,23.99l-9.99,27.17c-5.7,15.51-19.92,25.22-37.13,26.19Z"/>
+          </g>
+          <g>
+            <path class="c6" d="M858.42,103.47c10.34.04,18.37,9.12,16.11,19.18l-10.43,46.45c-2.52,11.23-12.14,19.74-24.11,19.75l-55.57.05c-6.37,0-11.81-6.3-10.34-12.9l23.37-104.96,15.31.33c1.15.02,3.26,1.39,3.81,2.24.66,1.03.7,3.85.4,5.25l-6.2,29.26c4.29-2.67,8.1-4.8,12.6-4.78l35.07.13ZM844.61,163.16l7.5-35.04c.58-3.52-1.77-6.47-5.34-6.47l-39.27-.07-9.9,44.16c-.18.79-.12,2.68.06,3.43s2.28,1.52,3.33,1.52l34.6-.03c4.3,0,8.04-2.9,9.02-7.5Z"/>
+            <path class="c6" d="M943.48,188.72h-51.9c-8.81,0-16.21-8.85-14.28-17.59l10.64-48.2c2.43-11.01,12.81-19.47,24.35-19.48l48.64-.06c4.87,0,10.04,3.15,12.51,6.15,3.33,4.04,4.44,9.88,3.24,15.08l-10.71,46.42c-2.24,9.71-12.22,17.68-22.49,17.68ZM939.2,170.7c5.26-1.1,7.22-4.94,8.21-9.44l7.27-33.06c.82-3.7-2.65-6.6-5.83-6.6l-32.33.07c-4.13,0-7.88,2.93-8.81,7.04l-7.96,35.46c-.68,3.02,1.89,6.44,4.95,6.45l34.49.07Z"/>
+            <path class="c6" d="M560.32,183.6c-1.22,5.36-7.33,5.64-10.96,5.57-5.48-.1-9.42.31-14.02-3.21l21.58-94.06-42.54-.23,12.44-17.76c1.26-1.8,6.07-3.21,8.36-3.21h92.13s-9.9,15.74-9.9,15.74c-1.49,3.1-4.6,5.12-8.14,5.17l-28.01.34-20.92,91.65Z"/>
+            <path class="c6" d="M705.77,104.73l-19.14,84.17-15.75.2c-1.78.02-3.86-2.73-4.13-4.67-3.34,2.03-8.16,4.55-12.59,4.53l-36.76-.18c-9.96-.05-16.9-9.39-14.68-19.36l14.71-65.95,13.96-.26c1.73-.03,4.93,1.73,6.85,3.18l-13.17,57.77c.19,1.55.5,3.64,1.02,4.56.62,1.1,3.54,1.91,5.01,1.91l38.58.04,15.05-67.13c6.83-.53,13.1-.74,21.04,1.18Z"/>
+            <path class="c6" d="M745.7,121.6c-2.7,0-7.36,2.19-8.01,5.05l-14,62.34-21.7-.06,15.6-68.37c2.26-9.91,11.58-17.14,21.6-17.18l41.31-.14-4.32,13.01c-.85,2.55-3.97,5.33-6.82,5.34l-23.67.02Z"/>
+            <g>
+              <path class="c2" d="M1061.67,188.51l-83.08.21,11.56-17.55c1.01-1.53,5.04-2.76,6.95-2.76l59.62-.06c3.77,0,6.58-3.83,7.29-6.94l3.36-14.82c.75-3.31-1.47-7.02-5.35-7.05l-47.55-.28c-5.47-.03-11.02-3.14-13.88-6.27-3.86-4.23-5.33-10.28-4.12-15.87l5.26-24.24c2.53-11.65,12.92-21.77,25.73-21.81l77.37-.25-8.83,15.22c-1.07,1.84-4.12,5.68-6.71,5.68l-56.17-.02c-3.34,0-7.76,2.13-8.63,5.46l-3.74,14.39c-.33,1.28.2,4.41.99,5.44.9,1.17,3.74,2.61,5.46,2.62l48.79.37c10.52.08,18.42,10.09,16.17,19.98l-6.7,29.43c-2.3,10.07-12.24,19.09-23.79,19.11Z"/>
+              <path class="c2" d="M1225.13,171.57l46.16-.13c2.49,0,4.67,2.99,3.98,5.15l-3.94,12.27-59.01-.31c-10.13-.05-17.29-9.75-15.26-19.23l9.54-44.43c2.41-11.21,11.28-21.15,23.64-21.12l44.75.1c9.58.02,17.01,9.17,15.07,18.1l-3.74,17.22c-1.93,8.9-10.63,15.69-20.16,15.7l-46.23.06-1.98,10.39c-.81,4.25,3.63,6.25,7.17,6.24ZM1263.24,140.66c6.45-3.61,7.92-19.44,3.23-19.56l-31.35-.8c-4.04-.1-8,2.94-8.77,6.72l-2.94,14.25,39.83-.62Z"/>
+              <path class="c2" d="M1351.5,188.37l-63.75.36,9.39-14.91c1.63-2.59,7.73-1.56,10.63-1.57l38.57-.15c5.84-.02,8.94-18.01,4.17-18.09l-38.25-.62c-8.07-.13-14.6-7.47-13.3-15.14l2.31-13.6c1.81-10.7,9.9-20.86,21.98-20.9l57.25-.17-5.94,11.84c-1.94,3.88-4.97,5.28-9.4,5.27l-38.93-.13c-5.06-.02-8.91,12.83-4.71,17.05l37.38.53c4.04.06,9.06,2.35,11.32,4.69,3.14,3.25,4.47,8.82,3.48,13.23l-3.59,16.01c-1.76,7.84-9.04,16.26-18.61,16.32Z"/>
+              <path class="c2" d="M1181.96,170.66c2.22.03,5.6,3.35,5.09,5.18l-3.61,12.92-27.02-.4c-9.91-.15-15.59-9.85-13.52-19.12l10.84-48.55-9.41-.21,4.6-16.8,8.85-.17,4.45-21.91,14.13-.19c1.94-.03,5.85,2.65,5.5,4.42l-3.51,17.6,24.16.18-4.12,13.74c-.44,1.47-3.3,3.5-4.9,3.49l-18.89-.13-9.38,42.22c-.33,1.47-.75,3.81-.37,4.87.44,1.23,3.11,2.68,4.42,2.7l12.71.16Z"/>
+              <path class="c2" d="M1118.17,188.67l-16.73.11c-1.09,0-3.45-1.48-3.65-2.39s-.08-2.85.22-4.15l17.59-78.35,16.03.13c1.06,0,3.03,1.22,3.64,1.92.6.71.8,3.19.56,4.25l-17.67,78.48Z"/>
+              <path class="c2" d="M1140.17,91.6l-21.98-.07,4.44-20.16,17.04-.14c.86,0,2.88,1.16,3.32,1.89.54.92.33,3.33.04,4.4l-2.86,14.08Z"/>
+            </g>
+          </g>
+        </g>
+        <polygon class="c1" points="201.09 214.51 208.66 197.43 67.5 205.97 201.09 214.51"/>
+        <polygon class="c4" points="212.09 185.09 219.66 168.01 78.5 176.55 212.09 185.09"/>
+        <polygon class="c3" points="224.42 155.67 232 138.59 90.83 147.13 224.42 155.67"/>
+      </svg>
+    </a>
+    <a href="#cta" class="nav-cta">Get a Free Quote</a>
+  </div>
+</header>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="container-sm" style="text-align:center;">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Shopify vs. Turbosites.io, Real Numbers
+    </div>
+    <h1>
+      Shopify is bleeding you dry<br />
+      <span>before you make a single sale.</span>
+    </h1>
+    <p>
+      A real Shopify store built to compete costs over $800 a month before you ever open your doors. See what you actually get when an expert builds it right, for a fraction of the cost.
+    </p>
+    <div class="hero-btns">
+      <a href="#cta" class="btn-primary">Get My Site Built</a>
+      <a href="#chart" class="btn-secondary">
+        See the 3-Year Savings
+        <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </a>
+    </div>
+    <div class="trust-badges">
+      <span>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Custom design, no templates
+      </span>
+      <span>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Live in 2 weeks
+      </span>
+      <span>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Flat $150/mo after build
+      </span>
+      <span>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        No long-term contracts
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Monthly cost breakdown ── -->
+<section class="section-gray">
+  <div class="container">
+    <div class="section-heading">
+      <h2>What You're Actually Paying Every Month</h2>
+      <p>A competitive Shopify store with the plugins it needs to function costs <strong>over $800/month</strong>, before you ship a single order.</p>
+    </div>
+
+    <div class="cost-grid">
+
+      <!-- Shopify -->
+      <div class="cost-card">
+        <div class="cost-card-label">Shopify DIY</div>
+        <div class="cost-card-price">$825<sub>/mo</sub></div>
+        <div class="cost-card-sub">What a serious store actually costs, every single month</div>
+        <ul class="line-items">
+          <li><span>Shopify Advanced Plan</span>                   <strong>$299</strong></li>
+          <li><span>Email + SMS Marketing (Klaviyo)</span>         <strong>$150</strong></li>
+          <li><span>Customer Reviews + UGC (Yotpo)</span>          <strong>$79</strong></li>
+          <li><span>Live Chat + Help Desk (Gorgias)</span>         <strong>$60</strong></li>
+          <li><span>Adobe Creative Cloud (fonts, design)</span>    <strong>$55</strong></li>
+          <li><span>Loyalty Program (Smile.io)</span>              <strong>$49</strong></li>
+          <li><span>SEO Suite Pro</span>                           <strong>$49</strong></li>
+          <li><span>Instagram Feed + Social Proof</span>           <strong>$29</strong></li>
+          <li><span>Error + Uptime Monitoring</span>               <strong>$26</strong></li>
+          <li><span>Premium Theme (amortized)</span>               <strong>$29</strong></li>
+        </ul>
+        <div class="total-row">
+          <span>Monthly total</span>
+          <span class="total-num-bad">$825/mo</span>
+        </div>
+        <div class="annual-row">
+          <span>That's every year, forever</span>
+          <span class="ann-bad">$9,900/yr</span>
+        </div>
+      </div>
+
+      <!-- Turbosites -->
+      <div class="cost-card featured">
+        <div class="featured-badge">The Smart Choice</div>
+        <div class="cost-card-label">Turbosites.io</div>
+        <div class="cost-card-price">$150<sub>/mo</sub></div>
+        <div class="cost-card-sub">After your one-time build fee, everything is included</div>
+        <ul class="line-items">
+          <li><span>Custom Website Build</span>                    <strong>$2,500 one-time</strong></li>
+          <li><span>Hosting (Vercel)</span>                        <span class="included">Included</span></li>
+          <li><span>Monthly Maintenance + Updates</span>           <strong>$150/mo</strong></li>
+          <li><span>SEO Setup + Optimization</span>                <span class="included">Included</span></li>
+          <li><span>Custom Design + Branding</span>                <span class="included">Included</span></li>
+          <li><span>Contact + Order Forms</span>                   <span class="included">Included</span></li>
+          <li><span>Performance Optimization</span>                <span class="included">Included</span></li>
+          <li><span>Dedicated Expert Support</span>                <span class="included">Included</span></li>
+          <li><span>Plugin Conflicts</span>                        <span class="included">Zero, none needed</span></li>
+          <li><span>Transaction Fees</span>                        <span class="included">$0 always</span></li>
+        </ul>
+        <div class="total-row">
+          <span>Monthly total (after build)</span>
+          <span class="total-num-good">$150/mo</span>
+        </div>
+        <div class="annual-row">
+          <span>Year 1 total including build</span>
+          <span class="ann-good">$4,300</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 3-year chart ── -->
+<section class="section-dark" id="chart">
+  <div class="container">
+    <div class="section-heading dark">
+      <h2>3-Year Cost Comparison</h2>
+      <p>Shopify invoices you the same $825 every single month, forever. The Turbosites.io build is paid once, then just $150/month.</p>
+    </div>
+
+    <div class="chart-card">
+      <h3>See where your money actually goes</h3>
+      <p class="chart-sub">After year one, the gap only gets wider.</p>
+
+      <div class="chart-year">
+        <div class="chart-year-label">Year 1</div>
+        <div class="chart-bars">
+          <div class="bar-row">
+            <div class="bar-name">Shopify</div>
+            <div class="bar bar-shopify" style="width:clamp(180px,70%,560px)">$9,900</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-name">Turbosites</div>
+            <div class="bar bar-turbo" style="width:clamp(100px,30%,240px)">$4,300</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-year">
+        <div class="chart-year-label">Year 2</div>
+        <div class="chart-bars">
+          <div class="bar-row">
+            <div class="bar-name">Shopify</div>
+            <div class="bar bar-shopify" style="width:clamp(180px,70%,560px)">$9,900</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-name">Turbosites</div>
+            <div class="bar bar-turbo" style="width:clamp(50px,13%,102px)">$1,800</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-year" style="margin-bottom:0;">
+        <div class="chart-year-label">Year 3</div>
+        <div class="chart-bars">
+          <div class="bar-row">
+            <div class="bar-name">Shopify</div>
+            <div class="bar bar-shopify" style="width:clamp(180px,70%,560px)">$9,900</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-name">Turbosites</div>
+            <div class="bar bar-turbo" style="width:clamp(50px,13%,102px)">$1,800</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="savings-box">
+        <div class="big-num">$21,800</div>
+        <div>
+          <p style="margin-bottom:4px;"><strong>saved over 3 years</strong> by choosing Turbosites.io over a full Shopify stack</p>
+          <p>Shopify 3-year total: <strong style="color:#f87171;">$29,700</strong> &nbsp;·&nbsp; Turbosites.io 3-year total: <strong style="color:#34d399;">$7,900</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIY cons ── -->
+<section class="section-white">
+  <div class="container">
+    <div class="section-heading">
+      <h2>What Nobody Warns You About<br />When You Go the DIY Route</h2>
+      <p>Shopify makes setup look easy. The reality is weeks of frustration, a growing monthly bill, and a store that still doesn't look or perform the way you imagined.</p>
+    </div>
+
+    <div class="cons-grid">
+      <div class="con-card">
+        <div class="con-icon-wrap">⏱️</div>
+        <div>
+          <h4>Months of Your Life, Gone</h4>
+          <p>Between learning the platform, wiring up apps, and configuring shipping and payments, most people spend 60 to 100+ hours before their store is even ready to launch.</p>
+        </div>
+      </div>
+      <div class="con-card">
+        <div class="con-icon-wrap">🔌</div>
+        <div>
+          <h4>Apps Break Each Other Constantly</h4>
+          <p>Every app you add is a new risk. One update can silently break another, and without a developer, you're left debugging a broken store during your busiest season.</p>
+        </div>
+      </div>
+      <div class="con-card">
+        <div class="con-icon-wrap">💸</div>
+        <div>
+          <h4>The Bill Never Stops Growing</h4>
+          <p>Every feature you need costs another $30 to $150/month on top of your plan. Most business owners don't realize how quickly that adds up until they're locked in.</p>
+        </div>
+      </div>
+      <div class="con-card">
+        <div class="con-icon-wrap">🎨</div>
+        <div>
+          <h4>You Look Like Every Other Shopify Store</h4>
+          <p>Shopify themes are used by tens of thousands of businesses. There is no template that makes your brand look unique, because it was designed for everyone.</p>
+        </div>
+      </div>
+      <div class="con-card">
+        <div class="con-icon-wrap">🔍</div>
+        <div>
+          <h4>Google Won't Find You</h4>
+          <p>SEO requires technical setup that most non-developers get wrong from day one, incorrect meta tags, missing schema, slow speeds, all of which cost you traffic and revenue.</p>
+        </div>
+      </div>
+      <div class="con-card">
+        <div class="con-icon-wrap">🐌</div>
+        <div>
+          <h4>Your Site Gets Slower with Every App</h4>
+          <p>Each plugin loads its own scripts. Bloated Shopify stores routinely fail Google's Core Web Vitals, which tanks your search rankings and kills your conversion rate.</p>
+        </div>
+      </div>
+      <div class="con-card">
+        <div class="con-icon-wrap">🔒</div>
+        <div>
+          <h4>Security and Maintenance Is on You</h4>
+          <p>App updates, SSL renewals, vulnerability patches, all your responsibility. Skip one and you're either exposed to attacks or paying a developer $150/hour to fix it.</p>
+        </div>
+      </div>
+      <div class="con-card">
+        <div class="con-icon-wrap">📞</div>
+        <div>
+          <h4>Support Disappears When You Need It Most</h4>
+          <p>Shopify support handles their platform, not your custom setup. When something breaks during a launch or a sale, you are completely on your own.</p>
+        </div>
+      </div>
+      <div class="con-card">
+        <div class="con-icon-wrap">📈</div>
+        <div>
+          <h4>The More You Grow, The More You Pay</h4>
+          <p>As your email list, traffic, and order volume increases, so do your Shopify plan tier, transaction fees, and app costs. Growth should reduce your overhead, not increase it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Feature comparison table ── -->
+<section class="section-gray">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Side-by-Side Comparison</h2>
+      <p>What you get with each option, and what you give up.</p>
+    </div>
+
+    <div class="compare-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="th-feature">What you need</th>
+            <th>Shopify DIY</th>
+            <th class="th-turbo">Turbosites.io</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-col">Custom design for your brand</td>
+            <td class="bad-col">❌ Template, used by thousands</td>
+            <td class="good-col">✅ 100% built for you</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Time from start to launch</td>
+            <td class="bad-col">❌ Weeks to months of your time</td>
+            <td class="good-col">✅ Live in 1 to 2 weeks</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Ongoing monthly cost</td>
+            <td class="bad-col">❌ $825+/month, every month</td>
+            <td class="good-col">✅ $150/month, flat</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Transaction fees per sale</td>
+            <td class="bad-col">❌ 0.5 to 2% of every sale</td>
+            <td class="good-col">✅ $0, none ever</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Page speed + Core Web Vitals</td>
+            <td class="bad-col">❌ Dragged down by plugins</td>
+            <td class="good-col">✅ Built fast from day one</td>
+          </tr>
+          <tr>
+            <td class="feature-col">SEO setup</td>
+            <td class="bad-col">❌ Manual, easy to get wrong</td>
+            <td class="good-col">✅ Done for you, correctly</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Technical support</td>
+            <td class="bad-col">❌ Shopify chat, not your site</td>
+            <td class="good-col">✅ Direct access to your developer</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Risk of something breaking</td>
+            <td class="bad-col">❌ Every app update is a gamble</td>
+            <td class="good-col">✅ Zero, no third-party plugins</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Cost as your business grows</td>
+            <td class="bad-col">❌ Increases with every milestone</td>
+            <td class="good-col">✅ Stays at $150/month, always</td>
+          </tr>
+          <tr>
+            <td class="feature-col">You own your code and data</td>
+            <td class="bad-col">❌ Locked in, no way out</td>
+            <td class="good-col">✅ Yours forever</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section-dark cta-section" id="cta" style="text-align:center;">
+  <div class="container-sm">
+    <div class="cta-badge">
+      <span class="badge-dot"></span>
+      Free Consultation
+    </div>
+    <h2>Stop Feeding Shopify.<br /><span>Start Owning Your Online Presence.</span></h2>
+    <p>One payment. A site built right, on time, the way you envisioned it. Monthly support that costs less than a single Shopify plugin.</p>
+
+    <ul class="cta-list">
+      <li>
+        <span class="cta-check">
+          <svg style="width:14px;height:14px;color:#0151fc;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        Custom design, no templates ever
+      </li>
+      <li>
+        <span class="cta-check">
+          <svg style="width:14px;height:14px;color:#0151fc;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        Live in 2 weeks or less
+      </li>
+      <li>
+        <span class="cta-check">
+          <svg style="width:14px;height:14px;color:#0151fc;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        $150/month flat, no surprises
+      </li>
+      <li>
+        <span class="cta-check">
+          <svg style="width:14px;height:14px;color:#0151fc;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        No long-term contracts
+      </li>
+    </ul>
+
+    <a href="https://turbosites.io/contact" class="btn-primary" style="font-size:16px;padding:16px 40px;">
+      Get a Free Quote →
+    </a>
+    <p style="font-size:13px;color:rgba(255,255,255,0.2);margin-top:16px;">
+      $2,500 one-time build &nbsp;·&nbsp; $150/month maintenance &nbsp;·&nbsp; Response within a few hours
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Turbosites.io — All rights reserved.</p>
+</footer>
+
+</body>
+</html>

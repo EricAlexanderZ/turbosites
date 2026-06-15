@@ -3,6 +3,7 @@ import { RevenueCalculator } from "@/components/revenue-calculator";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactForm } from "@/components/contact-form";
+import { CompareSection } from "@/components/compare-section";
 
 const SERVICES = [
   {
@@ -158,6 +159,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Real Cost — compare section */}
+      <CompareSection />
 
       {/* Contact */}
       <section id="contact" className="bg-[#000d2b] px-6 py-16 sm:py-24">

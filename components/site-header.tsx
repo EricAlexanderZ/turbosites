@@ -5,10 +5,11 @@ import { useState } from "react";
 import { Logo } from "@/components/logo";
 
 const NAV_LINKS = [
-  { label: "Services", href: "/#services" },
-  { label: "Work", href: "/projects" },
-  { label: "Calculator", href: "/#calculator" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Services",      href: "/#services"   },
+  { label: "Work",          href: "/projects"    },
+  { label: "Run the Numbers", href: "/#calculator" },
+  { label: "The Real Cost", href: "/#real-cost"  },
+  { label: "Contact",       href: "/#contact"    },
 ];
 
 export function SiteHeader() {
