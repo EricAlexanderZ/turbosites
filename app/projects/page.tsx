@@ -11,15 +11,6 @@ export const metadata: Metadata = {
 
 const PROJECTS = [
   {
-    name: "B2Z Engineering",
-    category: "Corporate Website",
-    description:
-      "Full corporate site for a Texas-based engineering and construction management firm. Built to establish credibility, showcase certifications, highlight services, and connect clients across multiple locations.",
-    url: "https://b2zeng.com/",
-    image: "/projects/b2z-engineering.png",
-    tags: ["Corporate", "Multi-Page", "Services"],
-  },
-  {
     name: "AA Designs",
     category: "E-Commerce",
     description:
@@ -27,6 +18,24 @@ const PROJECTS = [
     url: "https://aadesigns.co/",
     image: "/projects/aa-designs.png",
     tags: ["E-Commerce", "Print", "Stickers"],
+  },
+  {
+    name: "B2Z Builders",
+    category: "Service Business Website",
+    description:
+      "Lead-generating website for a Texas civil construction and site development company. Built to showcase heavy-civil capabilities, from excavation, grading, and utility trenching to concrete and road work, build trust with contractors and developers, and turn visitors into project inquiries with clear calls to action.",
+    url: "https://b2z-builders.com/",
+    image: "/projects/b2z-builders.png",
+    tags: ["Construction", "Site Development", "Lead Gen"],
+  },
+  {
+    name: "B2Z Engineering",
+    category: "Corporate Website",
+    description:
+      "Full corporate site for a Texas-based engineering and construction management firm. Built to establish credibility, showcase certifications, highlight services, and connect clients across multiple locations.",
+    url: "https://b2zeng.com/",
+    image: "/projects/b2z-engineering.png",
+    tags: ["Corporate", "Multi-Page", "Services"],
   },
 ];
 

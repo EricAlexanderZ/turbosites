@@ -27,7 +27,7 @@ export function SiteHeader() {
             <Link
               key={href}
               href={href}
-              className="text-sm font-medium text-gray-600 transition-colors hover:text-[#000d2b]"
+              className="text-sm font-medium text-gray-600 transition-colors hover:text-[#0151fc]"
             >
               {label}
             </Link>
@@ -62,7 +62,7 @@ export function SiteHeader() {
               <Link
                 key={href}
                 href={href}
-                className="text-base font-medium text-gray-700"
+                className="text-base font-medium text-gray-700 transition-colors hover:text-[#0151fc]"
                 onClick={() => setOpen(false)}
               >
                 {label}
