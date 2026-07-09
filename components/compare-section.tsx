@@ -76,7 +76,7 @@ const CONS = [
 
 const TABLE_ROWS = [
   { feature: "Custom design for your brand",   shopify: "Template, used by thousands",    turbo: "100% built for you"              },
-  { feature: "Time from start to launch",      shopify: "Weeks to months of your time",   turbo: "Live in 1 to 2 weeks"            },
+  { feature: "Time from start to launch",      shopify: "Weeks to months of your time",   turbo: "Live in 24 hours"                },
   { feature: "Ongoing monthly cost",           shopify: "$825+/month, every month",       turbo: "$100/month, flat"                },
   { feature: "Transaction fees per sale",      shopify: "0.5 to 2% of every sale",        turbo: "$0, none ever"                   },
   { feature: "Page speed + Core Web Vitals",   shopify: "Dragged down by plugins",        turbo: "Built fast from day one"         },

@@ -85,7 +85,7 @@ const CONS = [
 
 const TABLE_ROWS = [
   { feature: "Custom design for your brand",      shopify: "Template, used by thousands",    turbo: "100% built for you"                  },
-  { feature: "Time from start to launch",         shopify: "Weeks to months of your time",   turbo: "Live in 1 to 2 weeks"                },
+  { feature: "Time from start to launch",         shopify: "Weeks to months of your time",   turbo: "Live in 24 hours"                    },
   { feature: "Ongoing monthly cost",              shopify: "$825+/month, every month",       turbo: "$100/month, flat"                    },
   { feature: "Transaction fees per sale",         shopify: "0.5 to 2% of every sale",        turbo: "$0, none ever"                       },
   { feature: "Page speed + Core Web Vitals",      shopify: "Dragged down by plugins",        turbo: "Built fast from day one"             },
@@ -98,7 +98,7 @@ const TABLE_ROWS = [
 
 const CTA_ITEMS = [
   "Custom design, no templates ever",
-  "Live in 2 weeks or less",
+  "Live in 24 hours",
   "$100/month flat, no surprises",
   "No long-term contracts",
 ];
@@ -145,7 +145,7 @@ export default function ComparePage() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-gray-400 sm:mt-14 sm:gap-8">
-            {["Custom design, no templates", "Live in 2 weeks", "Flat $100/mo after build", "No long-term contracts"].map((b) => (
+            {["Custom design, no templates", "Live in 24 hours", "Flat $100/mo after build", "No long-term contracts"].map((b) => (
               <span key={b} className="flex items-center gap-2">
                 <svg className="h-4 w-4 shrink-0 text-[#0151fc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <polyline points="20 6 9 17 4 12" />

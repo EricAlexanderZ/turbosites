@@ -105,7 +105,7 @@ export default function HomePage() {
 
           {/* Trust badges */}
           <div className="mt-10 sm:mt-16 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-8 text-sm text-gray-400">
-            {["Mobile-First Design", "Launched in 2 Weeks", "Built for SEO", "Lifetime Support"].map((badge) => (
+            {["Mobile-First Design", "Launched in 24 Hours", "Built for SEO", "Lifetime Support"].map((badge) => (
               <span key={badge} className="flex items-center gap-2">
                 <svg className="h-4 w-4 shrink-0 text-[#0151fc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <polyline points="20 6 9 17 4 12" />
@@ -192,7 +192,7 @@ export default function HomePage() {
               <ul className="space-y-4">
                 {[
                   "Custom design, no templates",
-                  "Launched in 2 weeks or less",
+                  "Launched in 24 hours",
                   "Mobile-first and SEO-ready",
                   "Lifetime support included",
                 ].map((item) => (
