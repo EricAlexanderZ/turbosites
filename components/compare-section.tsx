@@ -284,7 +284,27 @@ export function CompareSection() {
             <p className="text-base text-gray-500 sm:text-lg">What you get with each option, and what you give up.</p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
+          {/* Mobile: stacked cards (a 3-column table can't fit a phone) */}
+          <div className="space-y-4 sm:hidden">
+            {TABLE_ROWS.map(({ feature, shopify, turbo }) => (
+              <div key={feature} className="rounded-2xl border border-gray-200 bg-white p-5">
+                <p className="mb-3 font-bold text-[#000d2b]">{feature}</p>
+                <div className="space-y-2.5">
+                  <div className="flex items-start gap-3">
+                    <span className="w-20 shrink-0 pt-0.5 text-xs font-bold uppercase tracking-widest text-gray-400">Shopify</span>
+                    <span className="text-sm font-semibold text-red-600">❌ {shopify}</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="w-20 shrink-0 pt-0.5 text-xs font-bold uppercase tracking-widest text-[#0151fc]">Turbosites</span>
+                    <span className="text-sm font-semibold text-[#0151fc]">✅ {turbo}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: full table */}
+          <div className="hidden overflow-hidden rounded-2xl border border-gray-200 bg-white sm:block">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-gray-50">

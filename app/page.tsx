@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactForm } from "@/components/contact-form";
 import { CompareSection } from "@/components/compare-section";
+import { MissedCallSection } from "@/components/missed-call-section";
 
 const SERVICES = [
   {
@@ -138,6 +139,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Missed Call Text Back */}
+      <MissedCallSection />
 
       {/* How It Works */}
       <section className="bg-white px-6 py-16 sm:py-24">
