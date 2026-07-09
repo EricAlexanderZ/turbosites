@@ -6,6 +6,7 @@ import { Logo } from "@/components/logo";
 
 const NAV_LINKS = [
   { label: "Services",      href: "/#services"   },
+  { label: "Pricing",       href: "/#pricing"    },
   { label: "Work",          href: "/projects"    },
   { label: "Run the Numbers", href: "/#calculator" },
   { label: "The Real Cost", href: "/#real-cost"  },

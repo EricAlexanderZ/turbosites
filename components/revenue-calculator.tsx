@@ -89,7 +89,7 @@ export function RevenueCalculator() {
     <section id="calculator" className="bg-[#000d2b] py-16 sm:py-24 px-6">
       <div className="mx-auto max-w-2xl">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#0d1f50] bg-[#050d28] px-4 py-2 text-sm font-medium text-[#0151fc] mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#0d1f50] bg-[#050d28] px-4 py-2 text-sm font-medium text-white mb-6">
             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
             </svg>

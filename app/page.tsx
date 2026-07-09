@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { ContactForm } from "@/components/contact-form";
 import { CompareSection } from "@/components/compare-section";
 import { MissedCallSection } from "@/components/missed-call-section";
+import { PricingSection } from "@/components/pricing-section";
 
 const SERVICES = [
   {
@@ -163,6 +164,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Pricing */}
+      <PricingSection />
 
       {/* Real Cost — compare section */}
       <CompareSection />

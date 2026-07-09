@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const BENEFITS = [
   "Replies in 5 seconds, day or night",
   "Keeps the customer from calling someone else",
@@ -14,7 +12,7 @@ export function MissedCallSection() {
 
           {/* Left: copy */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#0d1f50] bg-[#050d28] px-4 py-2 text-sm font-medium text-[#0151fc] mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#0d1f50] bg-[#050d28] px-4 py-2 text-sm font-medium text-white mb-6">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0151fc]" />
               Missed Call Text Back Service
             </div>
@@ -40,12 +38,6 @@ export function MissedCallSection() {
                 </li>
               ))}
             </ul>
-            <Link
-              href="#contact"
-              className="inline-flex rounded-full bg-[#0151fc] px-8 py-4 text-base font-semibold text-white transition hover:bg-[#0040cc]"
-            >
-              Get a Free Quote
-            </Link>
           </div>
 
           {/* Right: phone / text mockup */}

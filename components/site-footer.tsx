@@ -20,6 +20,11 @@ export function SiteFooter() {
             © {new Date().getFullYear()} TurboSites.io. All rights reserved.
           </p>
         </div>
+
+        <p className="mt-8 border-t border-gray-200 pt-6 text-center text-sm text-gray-400">
+          Web design proudly serving McAllen, Mission, Edinburg, Pharr, Brownsville
+          and small businesses across the Rio Grande Valley.
+        </p>
       </div>
     </footer>
   );

@@ -14,9 +14,9 @@ const SHOPIFY_ITEMS = [
 ];
 
 const TURBO_ITEMS = [
-  { label: "Custom Website Build",          cost: "$500 to $6,000 one-time", highlight: true  },
+  { label: "Custom Website Build",          cost: "$700 to $1,500 one-time", highlight: true  },
   { label: "Hosting (Vercel)",              cost: "Included",                highlight: false },
-  { label: "Monthly Maintenance + Updates", cost: "$150/mo",                 highlight: true  },
+  { label: "Monthly Maintenance + Updates", cost: "$100/mo",                 highlight: true  },
   { label: "SEO Setup + Optimization",      cost: "Included",                highlight: false },
   { label: "Custom Design + Branding",      cost: "Included",                highlight: false },
   { label: "Contact + Order Forms",         cost: "Included",                highlight: false },
@@ -77,13 +77,13 @@ const CONS = [
 const TABLE_ROWS = [
   { feature: "Custom design for your brand",   shopify: "Template, used by thousands",    turbo: "100% built for you"              },
   { feature: "Time from start to launch",      shopify: "Weeks to months of your time",   turbo: "Live in 1 to 2 weeks"            },
-  { feature: "Ongoing monthly cost",           shopify: "$825+/month, every month",       turbo: "$150/month, flat"                },
+  { feature: "Ongoing monthly cost",           shopify: "$825+/month, every month",       turbo: "$100/month, flat"                },
   { feature: "Transaction fees per sale",      shopify: "0.5 to 2% of every sale",        turbo: "$0, none ever"                   },
   { feature: "Page speed + Core Web Vitals",   shopify: "Dragged down by plugins",        turbo: "Built fast from day one"         },
   { feature: "SEO setup",                      shopify: "Manual, easy to get wrong",      turbo: "Done for you, correctly"         },
   { feature: "Technical support",              shopify: "Shopify chat, not your site",    turbo: "Direct access to your developer" },
   { feature: "Risk of something breaking",     shopify: "Every app update is a gamble",   turbo: "Zero, no third-party plugins"    },
-  { feature: "Cost as your business grows",    shopify: "Increases with every milestone", turbo: "Stays at $150/month, always"     },
+  { feature: "Cost as your business grows",    shopify: "Increases with every milestone", turbo: "Stays at $100/month, always"     },
   { feature: "You own your code and data",     shopify: "Locked in, no way out",          turbo: "Yours forever"                   },
 ];
 
@@ -153,7 +153,7 @@ export function CompareSection() {
               </div>
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-400">Turbosites.io</p>
               <div className="flex items-baseline gap-1">
-                <span className="text-5xl font-black tracking-tight text-[#000d2b]">$150</span>
+                <span className="text-5xl font-black tracking-tight text-[#000d2b]">$100</span>
                 <span className="text-lg font-medium text-gray-400">/mo</span>
               </div>
               <p className="mb-6 mt-1.5 text-sm text-gray-400">After your one-time build fee, everything is included</p>
@@ -170,14 +170,14 @@ export function CompareSection() {
               </ul>
               <div className="mt-5 flex items-center justify-between border-t border-gray-200 pt-4 font-bold text-gray-900">
                 <span>Monthly total (after build)</span>
-                <span className="text-xl text-[#0151fc]">$150/mo</span>
+                <span className="text-xl text-[#0151fc]">$100/mo</span>
               </div>
               <div className="mt-1.5 flex items-center justify-between text-sm text-gray-400">
                 <span>Year 1 total including build</span>
-                <span className="font-semibold text-emerald-600">Starting at $1,800+</span>
+                <span className="font-semibold text-emerald-600">Starting at $1,900</span>
               </div>
               <p className="mt-4 rounded-xl bg-[#eff4ff] px-4 py-3 text-xs leading-relaxed text-[#0151fc]">
-                Build pricing ranges from <strong>$500 to $6,000</strong> depending on the size and complexity of your project.{" "}
+                Build pricing ranges from <strong>$700 to $1,500</strong> depending on the size and complexity of your project.{" "}
                 <a href="#contact" className="font-semibold underline underline-offset-2 hover:text-[#0040cc]">
                   Get in touch for a free custom quote.
                 </a>
@@ -193,7 +193,7 @@ export function CompareSection() {
           <div className="mb-10 text-center sm:mb-14">
             <h3 className="mb-4 text-2xl font-black text-white sm:text-3xl">3-Year Cost Comparison</h3>
             <p className="mx-auto max-w-xl text-base text-[#a5bffe] sm:text-lg">
-              Shopify invoices you the same $825 every single month, forever. The Turbosites.io build is paid once, then just $150/month.
+              Shopify invoices you the same $825 every single month, forever. The Turbosites.io build is paid once, then just $100/month.
             </p>
           </div>
 
@@ -202,9 +202,9 @@ export function CompareSection() {
             <p className="mb-9 text-sm text-[#a5bffe]">After year one, the gap only gets wider.</p>
 
             {[
-              { year: "Year 1", shopify: "$9,900", turbo: "$1,800+", turboW: "clamp(50px,13%,104px)" },
-              { year: "Year 2", shopify: "$9,900", turbo: "$1,800",  turboW: "clamp(50px,13%,104px)" },
-              { year: "Year 3", shopify: "$9,900", turbo: "$1,800",  turboW: "clamp(50px,13%,104px)" },
+              { year: "Year 1", shopify: "$9,900", turbo: "$1,900", turboW: "clamp(50px,13%,104px)" },
+              { year: "Year 2", shopify: "$9,900", turbo: "$1,200",  turboW: "clamp(50px,13%,104px)" },
+              { year: "Year 3", shopify: "$9,900", turbo: "$1,200",  turboW: "clamp(50px,13%,104px)" },
             ].map(({ year, shopify, turbo, turboW }) => (
               <div key={year} className="mb-7 last:mb-0">
                 <p className="mb-2.5 text-xs font-bold uppercase tracking-widest text-white/30">{year}</p>
@@ -232,7 +232,7 @@ export function CompareSection() {
             ))}
 
             <div className="mt-8 flex flex-wrap items-center gap-5 rounded-xl border border-[#0151fc]/25 bg-[#0151fc]/10 p-5 sm:p-6">
-              <span className="text-4xl font-black tracking-tight text-emerald-400 sm:text-5xl">$21,800+</span>
+              <span className="text-4xl font-black tracking-tight text-emerald-400 sm:text-5xl">$25,800+</span>
               <div>
                 <p className="mb-1 text-sm text-white">
                   <strong>saved over 3 years</strong> by choosing Turbosites.io over a full Shopify stack
@@ -240,7 +240,7 @@ export function CompareSection() {
                 <p className="text-sm text-[#a5bffe]">
                   Shopify 3-year total: <strong className="text-red-400">$29,700</strong>
                   &nbsp;·&nbsp;
-                  Turbosites.io 3-year total: <strong className="text-emerald-400">starting at $7,900</strong>
+                  Turbosites.io 3-year total: <strong className="text-emerald-400">starting at $3,900</strong>
                 </p>
               </div>
             </div>
@@ -332,7 +332,7 @@ export function CompareSection() {
           </div>
 
           <p className="mt-8 text-center text-sm text-gray-400">
-            Build pricing ranges from <strong className="text-gray-600">$500 to $6,000</strong> depending on your project.{" "}
+            Build pricing ranges from <strong className="text-gray-600">$700 to $1,500</strong> depending on your project.{" "}
             <a href="#contact" className="font-semibold text-[#0151fc] hover:underline">
               Get a free quote →
             </a>
