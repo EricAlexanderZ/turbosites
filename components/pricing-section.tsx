@@ -6,9 +6,9 @@
 // Until a link is filled in, that button falls back to the contact form.
 // ─────────────────────────────────────────────────────────────
 const PAYMENT_LINKS: Record<string, string> = {
-  "Turbo Start": "",
-  "Turbo Growth": "",
-  "Turbo Pro": "",
+  "Turbo Start": "https://square.link/u/9djK7gXO",
+  "Turbo Growth": "https://square.link/u/DLwFFYWK",
+  "Turbo Pro": "https://square.link/u/oiy5WAKz",
 };
 
 type Tier = {
