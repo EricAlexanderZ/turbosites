@@ -3,6 +3,9 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
+// Square subscription checkout link for the $100/mo Website Maintenance & Support plan
+const SUBSCRIPTION_LINK = "https://square.link/u/0YxuSKQk";
+
 export const metadata: Metadata = {
   title: "Thank You",
   description: "Your build is booked. Here is what happens next.",
@@ -77,7 +80,23 @@ export default function ThankYouPage() {
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <div className="mx-auto mt-12 max-w-xl rounded-2xl border-2 border-[#0151fc] bg-[#eff4ff] p-6 text-center sm:p-8">
+            <h3 className="mb-2 text-lg font-bold text-[#000d2b]">One last step: your monthly plan</h3>
+            <p className="mb-5 text-sm leading-relaxed text-gray-600">
+              Set up your $100/month plan for hosting, maintenance, and support. You can start it now,
+              or we will help you get it going at launch.
+            </p>
+            <a
+              href={SUBSCRIPTION_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full bg-[#0151fc] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#0040cc]"
+            >
+              Start My $100/mo Plan
+            </a>
+          </div>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
               href="/"
               className="w-full rounded-full bg-[#0151fc] px-8 py-4 text-center text-base font-semibold text-white transition hover:bg-[#0040cc] sm:w-auto"
